@@ -7,6 +7,7 @@ while True :
   step_function = lambda x: 1 if x >= 0 else 0
 
   # Define the training data
+  # representing 48 - 57 in binary form (Ascii values of 0-9)
   training_data = [
       {'input': [1, 1, 0, 0, 0, 0], 'label': 1},
       {'input': [1, 1, 0, 0, 0, 1], 'label': 0},
