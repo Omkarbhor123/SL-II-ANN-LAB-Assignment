@@ -1,27 +1,26 @@
 # Define the activation function
-def activation_function(x):
-    if x >= 0:
+def activation_function(x,T):
+    if x >= T:
         return 1
     else:
         return 0
 
-# Define the ANDNOT function
+# Define the AND NOT function
 def ANDNOT(x1, x2):
     w1 = 1
-    w2 = 1
-    w3 = -1
-    b = -1.5
+    w2 = -1 
+    Threshold = 1 # set the threshold value 
 
-    net_input = w1*x1 + w2*x2 + b
-    output = activation_function(net_input)
+    net_input = w1*x1 + w2*x2 
+    output = activation_function(net_input , Threshold)
 
     return output
 
-# Test the ANDNOT function
-print("ANDNOT Truth Table:")
-print("x1 x2 | Output")
-print("---------------")
+# Test the AND NOT function
+print("AND NOT Truth Table:")
+print("X1  X2  Y")
+print("--------------")
 for x1 in [0, 1]:
     for x2 in [0, 1]:
         output = ANDNOT(x1, x2)
-        print(f"{x1}   {x2} | {output}")
+        print(f"{x1}   {x2}   {output}")
