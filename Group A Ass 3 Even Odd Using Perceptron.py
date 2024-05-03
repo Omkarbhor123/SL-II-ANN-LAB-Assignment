@@ -21,7 +21,7 @@ while True :
       {'input': [1, 1, 1, 0, 0, 1], 'label': 0},
   ]
 
-  # Initialize weights
+  # Initialize weights = 1 in binary 
   weights = np.array([0, 0, 0, 0, 0, 1])
 
   # Training the perceptron
