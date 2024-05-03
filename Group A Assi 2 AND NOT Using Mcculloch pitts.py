@@ -1,9 +1,3 @@
-import numpy as np
-
-# Define the weights and bias
-weights = np.array([[-1, -1], [1, 1]])
-bias = 1
-
 # Define the activation function
 def activation_function(x):
     if x >= 0:
@@ -12,16 +6,22 @@ def activation_function(x):
         return 0
 
 # Define the ANDNOT function
-def andnot(x1, x2):
-    z = np.dot(weights, [x1, x2]) + bias
-    y = activation_function(z)
-    return y
+def ANDNOT(x1, x2):
+    w1 = 1
+    w2 = 1
+    w3 = -1
+    b = -1.5
+
+    net_input = w1*x1 + w2*x2 + b
+    output = activation_function(net_input)
+
+    return output
 
 # Test the ANDNOT function
 print("ANDNOT Truth Table:")
-print("x1 x2 | y")
-print("----------")
+print("x1 x2 | Output")
+print("---------------")
 for x1 in [0, 1]:
     for x2 in [0, 1]:
-        y = andnot(x1, x2)
-        print(f"{x1}   {x2} | {y}")
+        output = ANDNOT(x1, x2)
+        print(f"{x1}   {x2} | {output}")
