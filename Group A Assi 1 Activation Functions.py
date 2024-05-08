@@ -12,8 +12,8 @@ def relu(x):
     return np.maximum(0, x)
 
 def softmax(x):
-    exp_values = np.exp(x - np.max(x, axis=0))
-    return exp_values / np.sum(exp_values, axis=0)
+    return np.exp(x) / np.sum(np.exp(x))
+
 
 # Define input range
 x = np.linspace(-5, 5, 100)
